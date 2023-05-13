@@ -1,0 +1,104 @@
+.career {
+    overflow: hidden;
+
+    &__container {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        @include lg {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    }
+
+    &__content {
+        @include md {
+            display: grid;
+            grid-template-columns: 1fr 155px;
+            gap: 0px 21px;
+            grid-template-areas:
+            'title button'
+            'description .';
+        }
+        @include lg {
+            grid-template-columns: 1fr 209px;
+            gap: 0px 31px;
+        }
+        @include xl {
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        @include xxl {
+            min-width: 2560px;
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        font-weight: 1000;
+        font-size: 32px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: $second;
+        margin-bottom: 24px;
+        @include lg {
+            font-size: 52px;
+            grid-area: title;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__description {
+        margin-bottom: 24px;
+        @include md {
+            grid-area: description;
+            margin-bottom: 40px;
+        }
+        @include lg {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__link {
+        margin-bottom: 40px;
+        @include md {
+            grid-area: button;
+            align-self: start;
+            margin-bottom: 0;
+        }
+        @include xl {
+            justify-self: end;
+        }
+    }
+
+    &__slider {
+        overflow: visible;
+    }
+
+    &__image {
+        border-radius: 16px;
+    }
+    &__image-item {
+        height: unset;
+        display: flex;
+        align-items: center;
+        @include md {
+            &:nth-child(odd) {
+                width: 34%;
+            }
+            &:nth-child(even) {
+                width: 25%;
+            }
+        }
+        @include xl {
+            @include md {
+                &:nth-child(odd) {
+                    width: 27%;
+                }
+                &:nth-child(even) {
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
+
